@@ -1,0 +1,15 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let user of this.users">
+    <div class="card">
+      <img [src]="user.avatar" class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+        <p class="card-texr">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ad in
+          dctetur quibusdam v
+        </p>
+        <p class="card-text">ID-{{ user.id }}</p>
+      </div>
+    </div>
+  </div>
+</div>
