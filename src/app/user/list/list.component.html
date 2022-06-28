@@ -1,4 +1,22 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div *ngIf="this.loading" class="alert alert-info text-center" role="alert">
+  <h4 class="alert-heading">Cargando...</h4>
+  <p class="fa fa-sync fa-spin fa-2x"></p>
+  <p class="mb-0"></p>
+</div>
+
+<div
+  *ngIf="this.error.message !== ''"
+  class="alert alert-danger text-center"
+  role="alert"
+>
+  <h4 class="alert-heading">Error</h4>
+  <pre>
+    {{ error | json }}
+  </pre>
+  <p class="mb-0"></p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="!this.loading">
   <div class="col" *ngFor="let user of this.users">
     <div class="card">
       <img [src]="user.avatar" class="card-img-top" />

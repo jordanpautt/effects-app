@@ -1,1 +1,33 @@
-<p>one-user works!</p>
+<div *ngIf="this.loading" class="alert alert-info text-center" role="alert">
+  <h4 class="alert-heading">Cargando...</h4>
+  <p class="fa fa-sync fa-spin fa-2x"></p>
+  <p class="mb-0"></p>
+</div>
+
+<div
+  *ngIf="this.error.message !== ''"
+  class="alert alert-danger text-center"
+  role="alert"
+>
+  <h4 class="alert-heading">Error</h4>
+  <pre>
+    {{ error | json }}
+  </pre>
+  <p class="mb-0"></p>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <img [src]="this.userData.avatar" alt="avatart" class="img-thumbanail" />
+  </div>
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <b>Nombre: </b> {{ this.userData.first_name }}
+      </li>
+      <li class="list-group-item">
+        <b>Apellido: </b> {{ this.userData.last_name }}
+      </li>
+    </ul>
+  </div>
+</div>
